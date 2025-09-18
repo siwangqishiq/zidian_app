@@ -10,10 +10,9 @@ OPTPARAMS := -O1
 
 compile:main.cpp
 	${CC} -std=${STD} ${OPTPARAMS} -c main.cpp -o ${BUILD_DIR}/main.o -I ${INCLUDE_DIR}
-	
-link:compile
-	${CC} ${BUILD_DIR}/*.o -o ${BUILD_DIR}/main.exe -Llib -lzidian -lglfw3 -lgdi32 -lopengl32 -luser32 -lkernel32
 
+link:compile
+	${CC} ${BUILD_DIR}/*.o -o ${BUILD_DIR}/main.exe -Llib -lzidian
 run:link
 	${BUILD_DIR}/main.exe
 
